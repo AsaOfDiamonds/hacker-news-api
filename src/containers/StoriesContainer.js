@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getStoryIds, getStory } from "../services/hnApi";
+import { getStoryIds } from "../services/hnApi";
 import { Story } from "../components/Story";
 
 export const StoriesContainer = () => {
@@ -9,9 +9,9 @@ export const StoriesContainer = () => {
     // data here can be called anything like lemons or bananas
     getStoryIds().then(data => setStoryIds(data));
     //if
-    //storyIds && storyIds.length>0
-    getStory(21164132)
-    .then(data => console.log(data));
+    // storyIds && storyIds.length>0
+    // getStory(21164132)
+    // .then(data => console.log(data));
   }, []);
   
   // in reference to the empty array above
@@ -23,7 +23,8 @@ export const StoriesContainer = () => {
   
   return (
   storyIds.map(storyId => (
-    <Story storyId={storyId} />
+    // React uses key to check for updates
+    <Story key={storyId} storyId={storyId} />
   ))
   // again storyId could be anything like lemon or banana
   )
