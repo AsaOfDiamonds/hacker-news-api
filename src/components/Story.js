@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { getStory } from "../services/hnApi";
+import { 
+  StoryWrapper,
+  StoryTitle,
+  StoryMeta,
+  StoryMetaElement,
+} from "../styles/StoryStyles";
 
 export const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
@@ -13,11 +19,22 @@ export const Story = ({ storyId }) => {
     //JSON.stringify(story)
     // comment out code below inc the fragments and uncomment line above
     // to see the json object coming back
-    <>
-    <a href={story.url}><p>{story.title}</p></a>
-    By: <p>{story.by}</p>
-    Posted: <p>{story.time}</p>
-    </>
+    <StoryWrapper data-testid="story">
+      <StoryTitle>
+        <a href={story.url}>{story.title}</a>
+      </StoryTitle>
+
+      <StoryMeta>
+        <span data-testid="story-by">
+          <StoryMetaElement color="#000">By:</StoryMetaElement> {story.by}
+        </span>
+        <span data-testid="story-time">
+          <StoryMetaElement color="#000">Posted:</StoryMetaElement>
+          {story.time}
+        </span>
+      </StoryMeta>
+
+    </StoryWrapper>
   ) : null;
  
 }

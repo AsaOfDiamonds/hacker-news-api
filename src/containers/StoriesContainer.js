@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getStoryIds } from "../services/hnApi";
 import { Story } from "../components/Story";
+import {
+   GlobalStyle,
+   StoriesContainerWrapper,
+   } from "../styles/StoriesContainerStyles";
 
 export const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
@@ -20,13 +24,21 @@ export const StoriesContainer = () => {
   // [storyIdsUpdated (true/false)]
   // what ever is put in [] is telling it to watch the variable and then rerender
   // if nothing is put in there it will only render once
+
+
   
   return (
-  storyIds.map(storyId => (
-    // React uses key to check for updates
-    <Story key={storyId} storyId={storyId} />
-  ))
-  // again storyId could be anything like lemon or banana
-  )
+    // React uses key to check for updates  
+    // again storyId could be anything like lemon or banana
+    <>
+    <GlobalStyle />
+    <StoriesContainerWrapper data-test-id="stories-container">
+      <h1>Hacker News Stories</h1>  
+      {storyIds.map(storyId => (
+        <Story key={storyId} storyId={storyId} />
+      ))}
+    </StoriesContainerWrapper> 
+  </>
+  );
   };
   
