@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getStoryIds } from "../services/hnApi";
+import { getStoryIds, getStory } from "../services/hnApi";
+import { Story } from "../components/Story";
 
 export const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
@@ -7,6 +8,10 @@ export const StoriesContainer = () => {
   useEffect(() => {
     // data here can be called anything like lemons or bananas
     getStoryIds().then(data => setStoryIds(data));
+    //if
+    //storyIds && storyIds.length>0
+    getStory(21164132)
+    .then(data => console.log(data));
   }, []);
   
   // in reference to the empty array above
@@ -17,7 +22,10 @@ export const StoriesContainer = () => {
   // if nothing is put in there it will only render once
   
   return (
-  <p>{JSON.stringify(storyIds)}</p>
+  storyIds.map(storyId => (
+    <Story storyId={storyId} />
+  ))
+  // again storyId could be anything like lemon or banana
   )
   };
   
