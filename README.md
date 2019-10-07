@@ -1,3 +1,5 @@
+marking where I stopped tutorial so I can find it later 1:21:20
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
