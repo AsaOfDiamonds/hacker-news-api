@@ -1,5 +1,7 @@
 marking where I stopped tutorial so I can find it later 1:21:20
 
+https://www.freecodecamp.org/news/learn-how-to-use-apis-with-react-by-building-a-hacker-news-api-application/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
