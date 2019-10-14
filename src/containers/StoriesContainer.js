@@ -17,6 +17,7 @@ export const StoriesContainer = () => {
     // console.log('count', count);
     // data here can be called anything like lemons or bananas
     getStoryIds().then(data => setStoryIds(data));
+    console.log('count', count);
     //if
     // storyIds && storyIds.length>0
     // getStory(21164132)
