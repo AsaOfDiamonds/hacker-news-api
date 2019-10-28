@@ -21,6 +21,6 @@ test('renders the story component with content', async () => {
   await waitForElement(() => [
     expect(getByTestId('story')).toBeTruthy(),
     expect(getByText('Tarnished: Google Responds')).toBeTruthy(),
-    expect(getByTestId('story-by').textContent).toEqual('By: Asa Shalom'),
+    expect(getByTestId('story-by').textContent).toEqual('By: Karl Hadwen'),
   ]);
 });
